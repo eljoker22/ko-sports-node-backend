@@ -14,9 +14,9 @@ app.use(cors({
 
 app.use('/api/v1/auth', authRoutes);
 
-app.get('/', (req, res) => { 
-    res.send('ko back-end i do it') 
-})
+// app.get('/', (req, res) => { 
+//     res.send('ko back-end i do it') 
+// })
 
 const start = async () => {
     try{
