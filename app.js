@@ -3,6 +3,8 @@ const app = express();
 const connectDB = require('./db/connect');
 const authRoutes = require('./routes/auth');
 const cors = require('cors');
+const port = 5000 || process.env.PORT;
+
 // midlleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
@@ -12,10 +14,11 @@ app.use(cors({
 
 app.use('/api/v1/auth', authRoutes);
 
+app.get((req, res) => { res.send('ko back-end i do it') })
 const start = async () => {
     try{
         await connectDB() 
-        app.listen(5000, console.log('app work'))
+        app.listen(port, console.log('app work'))
     } catch(errorr) {
         console.log(errorr)
     }
