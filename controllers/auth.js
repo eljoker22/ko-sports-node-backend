@@ -127,6 +127,25 @@ const userUpdate = async (req, res) => {
     }
 }
 
+// update user 
+const subscreption = async (req, res) => {
+    const tokenPass = req.headers['x-access-token'];
+    const pass = 'koJoker';
+    if (tokenPass === pass) {
+        const updateUser = await Auth.findOneAndUpdate(
+            {email: req.body.email},
+            req.body,
+            {new: true, runValidators: true});
+            if (updateUser) {
+                return res.status(200).json({succes: true})
+            }
+    }else{
+        return res.status(400).json({error: 'token expired'})
+    }
+}
+
+
+
 // confermation email user 
 const confermationEmail = async (req, res) => {
     const { email, code } = req.body;
@@ -208,5 +227,6 @@ module.exports = {
     userUpdate,
     confermationEmail,
     forgotPassword,
-    resetPassword
+    resetPassword,
+    subscreption
 }
