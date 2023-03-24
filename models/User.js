@@ -22,6 +22,8 @@ const userSchema = new mongoose.Schema({
     avatar: { type: String, trim: true },
     plan: { type: String, default: 'free' },
     paymentMethod: { type: String },
+    subscriptionDate: {type: String},
+    subscriptionEndDate: {type: String},
     subscriptionId: {type: String},
     emailConfermation: { type: Boolean, default: false },
     codeConfermation: { type: Number, default: null },
