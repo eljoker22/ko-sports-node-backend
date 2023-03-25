@@ -90,7 +90,7 @@ const getUser = async (req, res) => {
     if (decoded.email) {
         const getUser = await Auth.findOne({email: decoded.email});
         if (getUser) { // if get user
-            const {_id, email, username, plan, emailConfermation, avatar} = getUser;
+            const {_id, email, username, plan, emailConfermation, avatar, subscriptionDate, subscriptionEndDate} = getUser;
             return res.status(200).json({
                 success: true, 
                 user: { 
@@ -99,7 +99,9 @@ const getUser = async (req, res) => {
                     username: username,
                     plan: plan,
                     emailConfermation: emailConfermation,
-                    avatar: avatar
+                    avatar: avatar,
+                    subscriptionDate: subscriptionDate,
+                    subscriptionEndDate: subscriptionEndDate,
                 }
             })
         }else{
