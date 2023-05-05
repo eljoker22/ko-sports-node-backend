@@ -11,18 +11,18 @@ const registerUser = async (req, res) => {
     // validate
     const emailPatern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!emailPatern.test(email)) {
-        return res.status(400).json({error: 'email is not valid'});
+        return res.status(400).json({error: 'بريد الكترونى غير صحيح'});
     }
     if (username.length < 3) {
-        return res.status(400).json({error: 'username atlest 3 charcters'});
+        return res.status(400).json({error: 'اسم المستخدم غير صالح'});
     }
     if (password.length < 8) {
-        return res.status(400).json({error: 'password atlest 8 charcters'});
+        return res.status(400).json({error: 'كلمة السر غير صالحة'});
     }
     // if existed user 
     const existedUser = await Auth.findOne({email: email});
     if (existedUser) {
-        return res.status(400).json({error: 'user alredy exists'});
+        return res.status(400).json({error: 'المستخدم موجود بالفعل'});
     }
 
     // create new user
@@ -51,7 +51,7 @@ const loginUser = async (req, res) => {
         })
         // if user not exist
         if(!user){
-            return res.status(400).json({error: 'البريد الالكترونى مسجل بالفعل'});
+            return res.status(400).json({error: 'المستخدم غير موجود'});
         }
         // valid password
         const validatPassword = await bcrypt.compare( password, user.password);
@@ -105,7 +105,7 @@ const getUser = async (req, res) => {
                 }
             })
         }else{
-            return res.status(400).json({error: 'not found user'})
+            return res.status(400).json({error: 'المستخدم غير موجود'})
         }
     }else{
         return res.status(400).json({error: 'token expired'})
