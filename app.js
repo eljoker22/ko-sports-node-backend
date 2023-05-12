@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://ko-app-eljoker22.vercel.app']
+    origin: ['http://localhost:3000', 'https://ko-app-eljoker22.vercel.app', 'https://ko-app.vercel.app']
 }))
 
 app.use('/api/v1/auth', authRoutes);
