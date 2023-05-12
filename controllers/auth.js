@@ -101,7 +101,7 @@ const getUser = async (req, res) => {
                     emailConfermation: emailConfermation,
                     avatar: avatar,
                     subscriptionDate: subscriptionDate,
-                    subscriptionEndDate: subscriptionEndDate,
+                    subscriptionEndDate: subscriptionEndDate
                 }
             })
         }else{
