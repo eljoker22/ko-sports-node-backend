@@ -47,7 +47,7 @@ const loginUser = async (req, res) => {
     // email validate
     if (email) {
         const user = await Auth.findOne({
-            email: email.toLowerCase(),
+            email: email,
         })
         // if user not exist
         if(!user){
@@ -133,19 +133,57 @@ const userUpdate = async (req, res) => {
 const subscreption = async (req, res) => {
     const tokenPass = req.headers['x-access-token'];
     const pass = 'koJoker';
-    if (tokenPass === pass) {
-        const updateUser = await Auth.findOneAndUpdate(
-            {email: req.body.email},
-            req.body,
-            {new: true, runValidators: true});
-            if (updateUser) {
-                return res.status(200).json({succes: true})
-            }
+    const getUser = await Auth.findOne({email: req.body.email});
+    if (getUser) {
+        if (tokenPass === pass) {
+            const updateUser = await Auth.findOneAndUpdate(
+                {email: req.body.email},
+                req.body,
+                {new: true, runValidators: true});
+                if (updateUser) {
+                    return res.status(200).json({succes: true})
+                }
+        }else{
+            return res.status(400).json({error: 'token expired'})
+        }
     }else{
-        return res.status(400).json({error: 'token expired'})
+        return res.status(400).json({error: 'المستخدم غير موجود'})
     }
+
 }
 
+// find all users
+const getAll = async (req, res) => {
+    const tokenPass = req.headers['x-access-token'];
+    const pass = 'koJoker';
+    const getUsers = await Auth.find({});
+    //const {_id, email, username, plan, emailConfermation, avatar, subscriptionDate, subscriptionEndDate} = getUsers;
+
+    if (tokenPass === pass) {
+        if (getUsers) {
+            console.log(getUsers)
+            const users = [];
+            getUsers.map((user) => {
+                const {_id, email, username, plan, emailConfermation, avatar, subscriptionDate, subscriptionEndDate, created_at} = user;
+                users.push({
+                    id: _id,
+                    email: email,
+                    username: username,
+                    plan: plan,
+                    emailConfermation: emailConfermation,
+                    avatar: avatar,
+                    subscriptionDate: subscriptionDate,
+                    subscriptionEndDate: subscriptionEndDate,
+                    created_at: created_at
+                })
+            })  
+
+            return res.status(200).json(users);
+        }else{
+            return res.status(400).json({error: 'حاول مجددا ربما حدث خطأ'});
+        }
+    }
+}
 
 
 // confermation email user 
@@ -230,5 +268,6 @@ module.exports = {
     confermationEmail,
     forgotPassword,
     resetPassword,
-    subscreption
+    subscreption,
+    getAll,
 }

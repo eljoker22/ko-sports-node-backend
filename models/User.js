@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
     emailConfermation: { type: Boolean, default: false },
     codeConfermation: { type: Number, default: null },
     tokenForgotPassword: { type: String }
-})
+},
+{ timestamps: { createdAt: 'created_at' } })
 
 module.exports = mongoose.model('User', userSchema);
