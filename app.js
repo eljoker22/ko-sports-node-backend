@@ -3,7 +3,7 @@ const app = express();
 const connectDB = require('./db/connect');
 const authRoutes = require('./routes/auth');
 const cors = require('cors');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 // midlleware 
 app.use(express.json());
