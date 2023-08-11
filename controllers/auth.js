@@ -60,7 +60,7 @@ const loginUser = async (req, res) => {
             if (!user.emailConfermation) { // if email not verify
                 return res.status(400).json({error: 'تفقد بريدك الألكترونى للحصول على رمز تأكيد حسابك'});
             }
-            const {email, username, plan, avatar, codeConfermation, emailConfermation} = user;
+            const {email, username, plan, avatar, codeConfermation, emailConfermation, subscriptionDate, subscriptionEndDate} = user;
             // create token
             const token = jwt.sign({username: username, email: email}, process.env.JWT_SECRET, {expiresIn: '30d'});
             return res.status(200).json({
@@ -70,6 +70,8 @@ const loginUser = async (req, res) => {
                 avatar: avatar, 
                 code: codeConfermation, 
                 emailConfermation: emailConfermation, 
+                subscriptionDate: subscriptionDate,
+                subscriptionEndDate: subscriptionEndDate,
                 token: token});
         }else{
             return res.status(400).json({error: 'كلمة المرور غير صحيحة'});
