@@ -66,7 +66,7 @@ const loginUser = async (req, res) => {
             return res.status(200).json({
                 username: username,
                 email: email, 
-                paln: plan, 
+                plan: plan, 
                 avatar: avatar, 
                 code: codeConfermation, 
                 emailConfermation: emailConfermation, 
