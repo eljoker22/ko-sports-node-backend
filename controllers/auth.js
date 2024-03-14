@@ -7,7 +7,7 @@ require('dotenv').config(); // require .env
 
 // register user 
 const registerUser = async (req, res) => {
-    const {email, username, password} = req.body;
+    const {email, username, password, avatar} = req.body;
     // validate
     const emailPatern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!emailPatern.test(email)) {
