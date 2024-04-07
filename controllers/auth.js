@@ -32,7 +32,8 @@ const registerUser = async (req, res) => {
         email: email.toLowerCase(),
         username: username,
         password: hashedPassword,
-        codeConfermation: code
+        codeConfermation: code,
+        avatar: avatar
     })
     if (createUser) {
         // send email confermation
@@ -144,6 +145,7 @@ const subscreption = async (req, res) => {
                 req.body,
                 {new: true, runValidators: true});
                 if (updateUser) {
+                    // send mail with subscreption
                     return res.status(200).json({succes: true})
                 }
         }else{
