@@ -2,7 +2,7 @@ const Auth = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
-const {sendEamilConfermation, sendEmailForgotPassword} = require('./mail');
+const {sendEamilConfermation, sendEmailForgotPassword, sendSubscreptionEmail} = require('./mail');
 require('dotenv').config(); // require .env
 
 // register user 
@@ -29,7 +29,7 @@ const registerUser = async (req, res) => {
     const code = Math.floor(Math.random() * (999999 - 100000)) + 100000; // random confermation code
     const hashedPassword = await bcrypt.hash(password, 10); // hash password on database
     const createUser = await Auth.create({
-        email: email.toLowerCase(),
+        email: email,
         username: username,
         password: hashedPassword,
         codeConfermation: code,
@@ -142,10 +142,16 @@ const subscreption = async (req, res) => {
         if (tokenPass === pass) {
             const updateUser = await Auth.findOneAndUpdate(
                 {email: req.body.email},
-                req.body,
+                {
+                    email: req.body.email,
+                    plan: req.body.plan,
+                    subscriptionDate: req.body.subscriptionDate,
+                    subscriptionEndDate: req.body.subscriptionEndDate
+                },
                 {new: true, runValidators: true});
                 if (updateUser) {
                     // send mail with subscreption
+                    const send = await sendSubscreptionEmail(req.body.email, req.body.planName, req.body.subscriptionDate, req.body.subscriptionEndDate);
                     return res.status(200).json({succes: true})
                 }
         }else{
