@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { registerUser, loginUser, getUser, confermationEmail, forgotPassword, resetPassword, userUpdate, subscreption, getAll } = require('../controllers/auth');
+const { registerUser, loginUser, getUser, confermationEmail, forgotPassword, resetPassword, userUpdate, subscreption, getAll, reSendConfirmCode } = require('../controllers/auth');
 
 /** structure routes
  * /register => post method
@@ -17,6 +17,7 @@ router.route('/register').post(registerUser);
 router.route('/login').post(loginUser);
 router.route('/user').get(getUser).post(userUpdate);
 router.route('/email-confermation').post(confermationEmail);
+router.route('/resend-confermation').post(reSendConfirmCode);
 router.route('/forgot-password').post(forgotPassword);
 router.route('/reset-password').post(resetPassword);
 router.route('/supscreption').post(subscreption);

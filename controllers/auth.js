@@ -42,6 +42,24 @@ const registerUser = async (req, res) => {
     }
 }
 
+const reSendConfirmCode = async (req, res) => {
+    const { email } = req.body;
+    if (email) {
+        const code = Math.floor(Math.random() * (999999 - 100000)) + 100000; // random confermation code
+        const getUserAndUpdateCode = await Auth.findOneAndUpdate(
+            {email: email},
+            {        
+                codeConfermation: code,
+            },
+            {new: true, runValidators: true}
+            );
+        if (getUserAndUpdateCode) {
+            const send = await sendEamilConfermation(email, code);
+            res.status(201).json({success: true});
+        }
+    }
+}
+
 
 // login user 
 const loginUser = async (req, res) => {
@@ -281,4 +299,5 @@ module.exports = {
     resetPassword,
     subscreption,
     getAll,
+    reSendConfirmCode
 }

@@ -1,11 +1,11 @@
 const { createTransport } = require('nodemailer');
 
 const transporter = createTransport({
-    host: "smtp-relay.brevo.com",
+    host: "smtp.mailersend.net",
     port: 587,
     auth: {
-        user: "kosports74@gmail.com",
-        pass: "KaZTxtCAIvBFkwHR",
+        user: "MS_UlImIu@kostreams.xyz",
+        pass: "iZZyqUCHjF16GJvn",
     },
 });
 
@@ -52,8 +52,8 @@ const sendEamilConfermation = async (email, code) => {
 
     const mailOptions = {
         from: 'support@kostreams.xyz',
-        to: 'amprtoraly@gmail.com',
-        subject: `Ko Sports Verify Email`,
+        to: email,
+        subject: `تأكيد بريدك الالكترونى`,
         html: html
     };
     
@@ -112,7 +112,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
                           <tbody style="width:100%">
                             <tr style="width:100%">
                               <td data-id="__react-email-column">
-                                <h1 style="font-size:32px;font-weight:bold;text-align:center;color:azure">مرحبا ${email} </h1>
+                                <h1 style="font-size:32px;font-weight:bold;text-align:center;color:azure">مرحبا </h1>
                                 <h2 style="font-size:26px;font-weight:bold;text-align:center;color:azure">لقد تم تفعيل اشتراكك</h2>
                                 <table width="100%" style="padding: 10px;margin-bottom: 10px;">
                                     <td style="text-align: left; width: 50%;">
@@ -186,8 +186,8 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
     </html>`;
 
     const mailOptions = {
-        from: 'support@kostreams.xyz',
-        to: 'amprtoraly@gmail.com',
+        from:'support@kostreams.xyz',
+        to: email,
         subject: `KO Sports اشتراك`,
         html: html
     };
@@ -225,7 +225,7 @@ const sendEmailForgotPassword = async (email, token) => {
       <head>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
       </head>
-      <div style="display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0">تغيير كلمة السر<div> ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿</div>
+      <div style="display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0"><div></div>
       </div>
     
       <body style="background-color:#171616;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,Oxygen-Sans,Ubuntu,Cantarell,&quot;Helvetica Neue&quot;,sans-serif">
@@ -233,14 +233,16 @@ const sendEmailForgotPassword = async (email, token) => {
           <tbody>
             <tr style="width:100%;padding: 10px;">
               <td><img alt="Linear" height="100" src="https://ko-app.vercel.app/ko-logo.png" style="display:block;outline:none;border:none;text-decoration:none;border-radius:21px;" width="300" />
-                <h1 style="font-size:24px;letter-spacing:-0.5px;line-height:1.3;font-weight:400;color:azure;padding:17px">انقر هنا لتغيير كلمة السر الخاصة بك</h1>
+                <h1 style="font-size:24px;letter-spacing:-0.5px;line-height:1.3;font-weight:400;color:azure;padding:17px">طلب شخص ما مؤخرًا تغيير كلمة المرور لحساب  الخاص بك. إذا كنت أنت، فيمكنك تعيين كلمة مرور جديدة هنا</h1>
                 <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="padding:27px 10px 27px">
                   <tbody>
                     <tr>
-                      <td><a href="http://localhost:3000/reset-password?email=${email}&token=${token}" style="background-color:#DC0000;border-radius:3px;font-weight:600;color:#fff;font-size:15px;text-decoration:none;text-align:center;display:inline-block;padding:11px 23px 11px 23px;line-height:100%;max-width:100%" target="_blank"><span><!--[if mso]><i style="letter-spacing: 23px;mso-font-width:-100%;mso-text-raise:16.5" hidden>&nbsp;</i><![endif]--></span><span style="max-width:100%;display:inline-block;line-height:120%;mso-padding-alt:0px;mso-text-raise:8.25px">تغيير كلمة السر</span><span><!--[if mso]><i style="letter-spacing: 23px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]--></span></a></td>
+                      <td><a href="http://kostreams.xyz/reset-password?email=${email}&token=${token}" style="background-color:#DC0000;border-radius:3px;font-weight:600;color:#fff;font-size:15px;text-decoration:none;text-align:center;display:inline-block;padding:11px 23px 11px 23px;line-height:100%;max-width:100%" target="_blank"><span><!--[if mso]><i style="letter-spacing: 23px;mso-font-width:-100%;mso-text-raise:16.5" hidden>&nbsp;</i><![endif]--></span><span style="max-width:100%;display:inline-block;line-height:120%;mso-padding-alt:0px;mso-text-raise:8.25px">تغيير كلمة السر</span><span><!--[if mso]><i style="letter-spacing: 23px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]--></span></a></td>
                     </tr>
                   </tbody>
                 </table>
+                <p>للحفاظ على أمان حسابك، يرجى عدم إعادة توجيه هذه الرسالة الإلكترونية إلى أي شخص. راجع مركز المساعدة الخاص بنا </p>
+
                 <hr style="width:100%;border:none;border-top:1px solid #eaeaea;border-color:#dfe1e4;margin:42px 0 26px" />
                 <p style="font-size:12px;line-height:23px;margin:0;color:azure;font-weight:800;letter-spacing:0;margin-top:20px;font-family:HelveticaNeue,Helvetica,Arial,sans-serif;text-align:center;text-transform:uppercase">كل الحقوق محفوظة KO Sports ©</p>
     
@@ -254,7 +256,7 @@ const sendEmailForgotPassword = async (email, token) => {
 
     const mailOptions = {
       from: 'support@kostreams.xyz',
-      to: 'amprtoraly@gmail.com',
+      to: email,
       subject: `KO Sports resset password`,
       html: html
   };
