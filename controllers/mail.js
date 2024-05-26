@@ -84,7 +84,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
       <head>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
       </head>
-      <div style="display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0"><div>
+      <div style="overflow:hidden"><div>
     
       <body style="background-color:#171616;font-family:-apple-system,BlinkMacSystemFont">
         <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="background-color:#171616;max-width:37.5em">
