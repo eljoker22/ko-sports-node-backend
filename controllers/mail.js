@@ -84,9 +84,8 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
       <head>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
       </head>
-      <div style="overflow:hidden"><div>
     
-      <body style="background-color:#171616;font-family:-apple-system,BlinkMacSystemFont">
+      <body style="background-color:#171616;font-family:-apple-system,BlinkMacSystemFont;">
         <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="background-color:#171616;max-width:37.5em">
           <tbody>
             <tr style="width:100%">
@@ -139,7 +138,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
                                 </table>
                                 <table width="100%" style="padding: 10px;background:#2B2B2B;margin-bottom: 10px;">
                                     <td style="text-align: left; width: 50%;">
-                                        <strong style="display:block;"><img style="width: 25px;" src="https://ko-app.vercel.app/check-mark.png" /></strong>
+                                        <strong style="display:block;"><img style="width: 25px;" src="check-mark.png" /></strong>
                                     </td>
                                     <td style="text-align: right; width: 50%;">
                                         <strong style="display:block;margin-bottom: 5px;color:azure;font-size: 20px;">بدون اعلانات</strong>
@@ -147,7 +146,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
                                 </table>
                                 <table width="100%" style="padding: 10px;background:#2B2B2B;margin-bottom: 10px;">
                                     <td style="text-align: left; width: 50%;">
-                                        <strong style="display:block;"><img style="width: 25px;" src="https://ko-app.vercel.app/check-mark.png" /></strong>
+                                        <strong style="display:block;"><img style="width: 25px;" src="check-mark.png" /></strong>
                                     </td>
                                     <td style="text-align: right; width: 50%;">
                                         <strong style="display:block;margin-bottom: 5px;color:azure;font-size: 20px;">الوصول لكافة المباريات</strong>
@@ -155,7 +154,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
                                 </table>
                                 <table width="100%" style="padding: 10px;background:#2B2B2B;margin-bottom: 10px;">
                                     <td style="text-align: left; width: 50%;">
-                                        <strong style="display:block;"><img style="width: 25px;" src="https://ko-app.vercel.app/check-mark.png" /></strong>
+                                        <strong style="display:block;"><img style="width: 25px;" src="check-mark.png" /></strong>
                                     </td>
                                     <td style="text-align: right; width: 50%;">
                                         <strong style="display:block;margin-bottom: 5px;color:azure;font-size: 20px;">smart tv</strong>
@@ -185,7 +184,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
     </html>`;
 
     const mailOptions = {
-        from:'support@kostreams.xyz',
+        from:'support@kostreams.xyz',te style 
         to: email,
         subject: `KO Sports اشتراك`,
         html: html
