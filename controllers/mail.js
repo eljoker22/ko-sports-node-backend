@@ -138,7 +138,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
                                 </table>
                                 <table width="100%" style="padding: 10px;background:#2B2B2B;margin-bottom: 10px;">
                                     <td style="text-align: left; width: 50%;">
-                                        <strong style="display:block;"><img style="width: 25px;" src="check-mark.png" /></strong>
+                                        <strong style="display:block;"><img style="width: 25px;" src="https://ko-app.vercel.app/check-mark.png" /></strong>
                                     </td>
                                     <td style="text-align: right; width: 50%;">
                                         <strong style="display:block;margin-bottom: 5px;color:azure;font-size: 20px;">بدون اعلانات</strong>
@@ -146,7 +146,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
                                 </table>
                                 <table width="100%" style="padding: 10px;background:#2B2B2B;margin-bottom: 10px;">
                                     <td style="text-align: left; width: 50%;">
-                                        <strong style="display:block;"><img style="width: 25px;" src="check-mark.png" /></strong>
+                                        <strong style="display:block;"><img style="width: 25px;" src="https://ko-app.vercel.app/check-mark.png" /></strong>
                                     </td>
                                     <td style="text-align: right; width: 50%;">
                                         <strong style="display:block;margin-bottom: 5px;color:azure;font-size: 20px;">الوصول لكافة المباريات</strong>
@@ -154,7 +154,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
                                 </table>
                                 <table width="100%" style="padding: 10px;background:#2B2B2B;margin-bottom: 10px;">
                                     <td style="text-align: left; width: 50%;">
-                                        <strong style="display:block;"><img style="width: 25px;" src="check-mark.png" /></strong>
+                                        <strong style="display:block;"><img style="width: 25px;" src="https://ko-app.vercel.app/check-mark.png" /></strong>
                                     </td>
                                     <td style="text-align: right; width: 50%;">
                                         <strong style="display:block;margin-bottom: 5px;color:azure;font-size: 20px;">smart tv</strong>
