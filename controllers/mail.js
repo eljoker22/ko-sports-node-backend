@@ -184,7 +184,7 @@ const sendSubscreptionEmail = async (email, planName, subscriptionDate, subscrip
     </html>`;
 
     const mailOptions = {
-        from:'support@kostreams.xyz',te style 
+        from:'support@kostreams.xyz',
         to: email,
         subject: `KO Sports اشتراك`,
         html: html
